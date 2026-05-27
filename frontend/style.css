@@ -1,0 +1,23 @@
+body{
+    background-color: white
+  
+
+}
+.MainTit{
+    color:#4684FB;
+    font-family: Arial , "Georgia";
+    font-weight: bold;
+    font-size: 42px;
+    
+
+
+}
+.account_creation{
+    color:#4684FB;
+    font-family: Arial , "Georgia";
+    font-weight: bold;
+    font-size: 16px;
+    text-decoration: #2F5FD7 underline;
+
+
+}
