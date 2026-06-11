@@ -37,8 +37,8 @@ export const STATUS_CONFIG = {
 };
 
 export const EVENT_TYPE_CONFIG = {
-  exame:         { label: 'Exame',            color: '#C92A2A', bg: '#FFF5F5', icon: 'Ì≥ù' },
-  prazo:         { label: 'Prazo',            color: '#E67700', bg: '#FFF3BF', icon: 'Ì≥ã' },
-  estudo:        { label: 'Sess√£o de Estudo', color: '#1971C2', bg: '#E7F5FF', icon: 'Ì≥ö' },
-  personalizado: { label: 'Personalizado',    color: '#862E9C', bg: '#F8F0FC', icon: 'ÔøΩÔøΩ' },
+  exame:         { label: 'Exame',            color: '#C92A2A', bg: '#FFF5F5', icon: 'üìù'},
+  prazo:         { label: 'Prazo',            color: '#E67700', bg: '#FFF3BF', icon: 'üïñ' },
+  estudo:        { label: 'Sess√£o de Estudo', color: '#1971C2', bg: '#E7F5FF', icon: '‚úèÔ∏è'},
+  personalizado: { label: 'Personalizado',    color: '#862E9C', bg: '#F8F0FC', icon: 'üßç' },
 };
