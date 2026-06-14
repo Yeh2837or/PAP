@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Utils } from '../core/utils';
 import { SESSION_KEY } from '../core/config';
 
 const AppCtx = createContext(null);

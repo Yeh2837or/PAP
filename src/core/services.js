@@ -10,11 +10,10 @@ export const AuthService = {
     if (UserRepository.findByEmail(data.email))
       return { ok: false, errors: { email: 'Este e-mail já está registado.' } };
 
-    const password_hash = await Utils.hashPassword(data.password);
     const user = UserRepository.create({
       name: data.name.trim(),
       email: data.email.toLowerCase(),
-      password_hash,
+      password: data.password,
     });
 
     ActivityRepository.log(user.id, 'register', 'user', `Conta criada: ${user.email}`);
@@ -29,8 +28,7 @@ export const AuthService = {
     if (!user)
       return { ok: false, errors: { email: 'E-mail não encontrado.' } };
 
-    const hash = await Utils.hashPassword(data.password);
-    if (hash !== user.password_hash)
+    if (data.password !== user.password)
       return { ok: false, errors: { password: 'Palavra-passe incorreta.' } };
 
     ActivityRepository.log(user.id, 'login', 'user', `Login: ${user.email}`);
@@ -75,7 +73,6 @@ export const SubjectService = {
 
     SubjectRepository.delete(id);
 
-    // Remove subject reference from related tasks and events
     TaskRepository.findAll(userId)
       .filter(t => t.subject_id === id)
       .forEach(t => TaskRepository.update(t.id, { subject_id: null }));
@@ -176,7 +173,6 @@ export const DashboardService = {
     const tasks = TaskRepository.findAll(userId);
     const events = EventRepository.findAll(userId);
     const today = Utils.today();
-    const in7days = Utils.dateToISO(Utils.addDays(new Date(), 7));
 
     return {
       total_tasks: tasks.length,
