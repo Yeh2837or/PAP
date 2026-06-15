@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AppProvider, useApp } from './context/AppContext';
 import { AppLayout } from './components/layout';
 import { AuthPage } from './pages/AuthPage';
+import { Dashboard } from './pages/Dashboard';
 
 function MainRouter() {
   const { user } = useApp();
@@ -14,9 +15,7 @@ function MainRouter() {
 
   return (
     <AppLayout page={page} setPage={setPage}>
-      <div style={{ padding: '32px', color: 'var(--text-muted)' }}>
-        Em construção...
-      </div>
+      {page === 'dashboard' && <Dashboard setPage={setPage} />}
     </AppLayout>
   );
 }
