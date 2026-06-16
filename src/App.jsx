@@ -4,6 +4,7 @@ import { AppLayout } from './components/layout';
 import { AuthPage } from './pages/AuthPage';
 import { Dashboard } from './pages/Dashboard';
 import { Subjects } from './pages/Subjects';
+import { Tasks } from './pages/Tasks';
 
 function MainRouter() {
   const { user } = useApp();
@@ -18,6 +19,7 @@ function MainRouter() {
     <AppLayout page={page} setPage={setPage}>
       {page === 'dashboard' && <Dashboard setPage={setPage} />}
       {page === 'subjects'  && <Subjects />}
+      {page === 'tasks'     && <Tasks />}
     </AppLayout>
   );
 }
@@ -29,6 +31,3 @@ export default function App() {
     </AppProvider>
   );
 }
-
-
-
