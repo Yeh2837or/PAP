@@ -1,7 +1,7 @@
 import { STORAGE_KEY } from './config';
 import { Utils } from './utils';
 
-// Simple local storage database
+//local storage database
 const DB = {
   load() {
     try {

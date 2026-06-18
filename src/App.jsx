@@ -5,6 +5,7 @@ import { AuthPage } from './pages/AuthPage';
 import { Dashboard } from './pages/Dashboard';
 import { Subjects } from './pages/Subjects';
 import { Tasks } from './pages/Tasks';
+import { Calendar } from './pages/Calendar';
 
 function MainRouter() {
   const { user } = useApp();
@@ -20,6 +21,7 @@ function MainRouter() {
       {page === 'dashboard' && <Dashboard setPage={setPage} />}
       {page === 'subjects'  && <Subjects />}
       {page === 'tasks'     && <Tasks />}
+      {page === 'calendar'  && <Calendar />}
     </AppLayout>
   );
 }
@@ -31,3 +33,4 @@ export default function App() {
     </AppProvider>
   );
 }
+

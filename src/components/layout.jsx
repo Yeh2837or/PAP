@@ -5,10 +5,11 @@ import { SESSION_KEY } from '../core/config';
 export function AppLayout({ page, setPage, children }) {
   const { setUser } = useApp();
 
-  const logout = () => {
-    sessionStorage.removeItem(SESSION_KEY);
-    
- };
+const logout = () => {
+  sessionStorage.removeItem(SESSION_KEY);
+  setUser(null);
+};
+
 
   const navItems = [
     { key: 'dashboard', icon: '📊', label: 'Dashboard' },
